@@ -5,9 +5,10 @@ def DDA(x1, y1, x2, y2):
     dy = y2 - y1
 
     # Determine steps
-    steps = int(max(abs(dx), abs(dy)))
-    if steps == 0:
-        steps = 1
+    if abs(dx) > abs(dy):
+        steps = abs(dx)
+    else:
+        steps = abs(dy)
 
     # Calculate increment
     xinc = dx / steps
@@ -33,9 +34,9 @@ def DDA(x1, y1, x2, y2):
 
 
 # Input from user
-x1 = float(input("Enter x1: "))
-y1 = float(input("Enter y1: "))
-x2 = float(input("Enter x2: "))
-y2 = float(input("Enter y2: "))
+x1 = int(input("Enter x1: "))
+y1 = int(input("Enter y1: "))
+x2 = int(input("Enter x2: "))
+y2 = int(input("Enter y2: "))
 
 DDA(x1, y1, x2, y2)
